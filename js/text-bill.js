@@ -8,8 +8,8 @@ var smsTotalOne = document.querySelector(".smsTotalOne");
 
 var totalOne = document.querySelector(".totalOne");
 
-var callValue = 0
-var smsValue = 0
+var callValue = 0;
+var smsValue = 0;
 //var totalValue = 0
 
 function textBillTotal(){
