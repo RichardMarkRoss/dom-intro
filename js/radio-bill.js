@@ -37,13 +37,12 @@ function radioBillTotal(){
     var totalValue = callsValueTwo + smsValueTwo;
     totalTwo.innerHTML = totalValue.toFixed(2);
 
-    // if (totalValue >= 50){
-    //
-    //     totalTwo.classList.add("danger");
-    // }
-    // else if (totalValue >= 30){
-    //     totalTwo.classList.add("warning");
-    // }
+     if (totalValue >= 50){
+         totalTwo.classList.add("danger");
+     }
+     else if (totalValue >= 30){
+         totalTwo.classList.add("warning");
+     }
 
 }
 

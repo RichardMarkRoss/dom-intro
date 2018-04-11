@@ -32,6 +32,15 @@ function calculateBtnClicked(){
   //round to two decimals
   var roundedBillTotal = billTotal.toFixed(2);
   billTotalElement.innerHTML = roundedBillTotal;
+
+
+      if (billTotal >= 30){
+
+          billTotalElement.classList.add("danger");
+      }
+      else if (billTotal >= 20){
+          billTotalElement.classList.add("warning");
+      }
 }
 
 calculateBtn.addEventListener('click', calculateBtnClicked);
