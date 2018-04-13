@@ -1,22 +1,53 @@
-// get a reference to the sms or call radio buttons
+var callCostSetting = document.querySelector(".callCostSetting");
+var smsCostSetting = document.querySelector(".smsCostSetting");
+var warningLevelSetting = document.querySelector(".warningLevelSetting");
+var criticalLevelSetting = document.querySelector(".criticalLevelSetting");
+var updateSetting = document.querySelector(".updateSetting");
 
-// get refences to all the settings fields
+var billItemWithSetting = document.querySelector(".billItemTypeWithSettings");
+var buttonPrimary = document.querySelector(".thisDamnBtn");
+var callTotalSetting = document.querySelector("callTotalSetting");
+var smsTotalsetting = document.querySelector(".smsTotalSetting");
+var totalSetting = document.querySelector("totalSetting");
+var updateSettingBtn = document.querySelector(".updateSettings");
 
-//get a reference to the add button
+var callTheTotal = 0;
+var callAmount = 0;
+var smsAmount = 0;
 
-//get a reference to the 'Update settings' button
+function addSetting(){
 
-// create a variables that will keep track of all the settings
+var  updateAmountCall = callCostSetting.value;
 
-// create a variables that will keep track of all three totals.
+if(callCostSetting !== ""){
+    callAmount = parseFloat(updateAmountCall);
+    //callTheTotal += callAmount;
+    //console.log(callAmount)
+}
 
-//add an event listener for when the 'Update settings' button is pressed
+}
 
-//add an event listener for when the add button is pressed
+function addTotal(){
 
-//in the event listener get the value from the billItemTypeRadio radio buttons
-// * add the appropriate value to the call / sms total
-// * add the appropriate value to the overall total
-// * add nothing for invalid values that is not 'call' or 'sms'.
-// * display the latest total on the screen.
-// * check the value thresholds and display the total value in the right color.
+  		var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
+		if (checkedRadioBtn){
+    		var billItemSet = checkedRadioBtn.value;
+		}
+
+
+    if (billItemSet === "call"){
+        callTheTotal += callAmount;
+        //console.log(callTheTotal)
+    }
+    // if (billItemWithSetting = smsAmount){
+    //     smsTotalsetting += smsAmount;
+    // }
+
+
+  //  smsTotalsetting.innerHTML = smsTotalsetting.toFixed(2);
+    var totalValue = callTheTotal;// + smsTotalsetting;
+    totalSetting.innerHTML = totalValue.toFixed(2);
+	}
+
+  updateSettingBtn.addEventListener("click", addSetting);
+    buttonPrimary.addEventListener("click", addTotal);
