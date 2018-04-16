@@ -74,8 +74,8 @@ function addTotal(){
     totalSetting.innerHTML = totalValue.toFixed(2);
 
     if (totalValue >= critLevel){
-
         totalSetting.classList.add("danger");
+        buttonAdd.disabled = true;
     }
 
     else if (totalValue >= warnLevel){
