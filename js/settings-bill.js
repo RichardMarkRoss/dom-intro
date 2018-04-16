@@ -15,12 +15,15 @@ var callTheTotal = 0;
 var smsTheTotal = 0;
 var callAmount = 0;
 var smsAmount = 0;
+var warnLevel = 0;
+var critLevel = 0;
 
 function addSetting(){
 
-var  updateAmountCall = callCostSetting.value;
-var  updateAmountSms = smsCostSetting.value;
-
+var updateAmountCall = callCostSetting.value;
+var updateAmountSms = smsCostSetting.value;
+var updateAmountcritLvl = criticalLevelSetting.value;
+var updateAmountwarnLvl = warningLevelSetting.value;
 
 if(callCostSetting != ""){
     callAmount = parseFloat(updateAmountCall);
@@ -31,9 +34,14 @@ if(callCostSetting != ""){
       smsAmount = parseFloat(updateAmountSms);
     //  smsTheTotal += smsAmount;
     }
-  console.log(callAmount)
-  console.log(smsAmount)
-
+  // console.log(callAmount)
+  // console.log(smsAmount)
+    if(warningLevelSetting != ""){
+    warnLevel = parseFloat(updateAmountwarnLvl);
+    }
+    if(criticalLevelSetting != ""){
+    critLevel = parseFloat(updateAmountcritLvl);
+    }
 }
 
 function addTotal(){
@@ -53,16 +61,27 @@ function addTotal(){
     }
 
 
+
     // if (billItemWithSetting = smsAmount){
     //     smsTotalsetting += smsAmount;
     // }
-    console.log(callTheTotal)
+    console.log(callTheTotal);
 
 
     smsTotalsetting.innerHTML = smsTheTotal.toFixed(2);
     callTotalSetting.innerHTML = callTheTotal.toFixed(2);
     var totalValue = callTheTotal  + smsTheTotal;
     totalSetting.innerHTML = totalValue.toFixed(2);
+
+    if (totalValue >= critLevel){
+
+        totalSetting.classList.add("danger");
+    }
+
+    else if (totalValue >= warnLevel){
+        totalSetting.classList.add("warning");
+    }
+
 	}
 
   updateSettingBtn.addEventListener("click", addSetting);
