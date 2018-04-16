@@ -5,25 +5,34 @@ var criticalLevelSetting = document.querySelector(".criticalLevelSetting");
 var updateSetting = document.querySelector(".updateSetting");
 
 var billItemWithSetting = document.querySelector(".billItemTypeWithSettings");
-var buttonPrimary = document.querySelector(".thisDamnBtn");
-var callTotalSetting = document.querySelector("callTotalSetting");
-var smsTotalsetting = document.querySelector(".smsTotalSetting");
-var totalSetting = document.querySelector("totalSetting");
+var buttonAdd = document.querySelector(".thisDamnBtn");
+var callTotalSetting = document.querySelector(".callTotalSettings");
+var smsTotalsetting = document.querySelector(".smsTotalSettings");
+var totalSetting = document.querySelector(".totalSettings");
 var updateSettingBtn = document.querySelector(".updateSettings");
 
 var callTheTotal = 0;
+var smsTheTotal = 0;
 var callAmount = 0;
 var smsAmount = 0;
 
 function addSetting(){
 
 var  updateAmountCall = callCostSetting.value;
+var  updateAmountSms = smsCostSetting.value;
 
-if(callCostSetting !== ""){
+
+if(callCostSetting != ""){
     callAmount = parseFloat(updateAmountCall);
     //callTheTotal += callAmount;
-    //console.log(callAmount)
-}
+  }
+
+  if(smsCostSetting != ""){
+      smsAmount = parseFloat(updateAmountSms);
+    //  smsTheTotal += smsAmount;
+    }
+  console.log(callAmount)
+  console.log(smsAmount)
 
 }
 
@@ -37,17 +46,24 @@ function addTotal(){
 
     if (billItemSet === "call"){
         callTheTotal += callAmount;
-        //console.log(callTheTotal)
     }
+
+    if (billItemSet === "sms"){
+        smsTheTotal += smsAmount;
+    }
+
+
     // if (billItemWithSetting = smsAmount){
     //     smsTotalsetting += smsAmount;
     // }
+    console.log(callTheTotal)
 
 
-  //  smsTotalsetting.innerHTML = smsTotalsetting.toFixed(2);
-    var totalValue = callTheTotal;// + smsTotalsetting;
+    smsTotalsetting.innerHTML = smsTheTotal.toFixed(2);
+    callTotalSetting.innerHTML = callTheTotal.toFixed(2);
+    var totalValue = callTheTotal  + smsTheTotal;
     totalSetting.innerHTML = totalValue.toFixed(2);
 	}
 
   updateSettingBtn.addEventListener("click", addSetting);
-    buttonPrimary.addEventListener("click", addTotal);
+    buttonAdd.addEventListener("click", addTotal);
