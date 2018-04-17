@@ -70,15 +70,15 @@ function addTotal(){
 
     smsTotalsetting.innerHTML = smsTheTotal.toFixed(2);
     callTotalSetting.innerHTML = callTheTotal.toFixed(2);
-    var totalValue = callTheTotal  + smsTheTotal;
+    var totalValue = callTheTotal + smsTheTotal;
     totalSetting.innerHTML = totalValue.toFixed(2);
 
     if (totalValue >= critLevel){
         totalSetting.classList.add("danger");
-        buttonAdd.disabled = true;
+
     }
 
-    else if (totalValue >= warnLevel){
+    if (totalValue >= warnLevel){
         totalSetting.classList.add("warning");
     }
 
