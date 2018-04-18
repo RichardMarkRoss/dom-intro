@@ -17,7 +17,7 @@ var callAmount = 0;
 var smsAmount = 0;
 var warnLevel = 0;
 var critLevel = 0;
-var totalValue = 0
+var totalValue = 0;
 
 
 function addTotal(){
