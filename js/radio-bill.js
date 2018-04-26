@@ -30,7 +30,11 @@ function radioBillTotal(){
     if (billItemType === "sms"){
         smsValueTwo += 0.75;
     }
+		return billItemType;
+	}
+function radioBillLogic(){
 
+	var radioTotal = radioBillTotal();
 
     callsTotalTwo.innerHTML = callsValueTwo.toFixed(2);
     smsTotalTwo.innerHTML = smsValueTwo.toFixed(2);
@@ -47,4 +51,6 @@ function radioBillTotal(){
 }
 
 
-radioBillAddBtn.addEventListener('click', radioBillTotal);
+radioBillAddBtn.addEventListener('click',function(){
+radioBillLogic();
+});

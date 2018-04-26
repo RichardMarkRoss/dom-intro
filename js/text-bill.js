@@ -12,11 +12,11 @@ var callValue = 0;
 var smsValue = 0;
 //var totalValue = 0
 
-function textBillTotal(){
+function textBillTotal(billTypeEntered){
 
-    var billTypeCross = billTypeText.value;
-
-    var billTypeEntered = billTypeCross.trim();
+    // var billTypeCross = billTypeText.value;
+    //
+    // var billTypeEntered = billTypeCross.trim();
 
     if (billTypeEntered === "call"){
         callValue += 2.75;
@@ -24,8 +24,13 @@ function textBillTotal(){
     if (billTypeEntered === "sms"){
         smsValue += 0.75;
     }
+  //  return billTypeEntered;
+}
 
+function textBillLogic(){
+  var billTypeCross = billTypeText.value;
 
+var textBill = textBillTotal(billTypeCross)
     callsTotalOne.innerHTML = callValue.toFixed(2);
     smsTotalOne.innerHTML = smsValue.toFixed(2);
     var totalValue = callValue + smsValue;
@@ -42,4 +47,6 @@ function textBillTotal(){
 }
 
 
-addToBillBtn.addEventListener('click', textBillTotal);
+addToBillBtn.addEventListener('click',function(){
+   textBillLogic()
+ });
