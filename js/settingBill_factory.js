@@ -45,7 +45,7 @@ function updateSmsValue(value){
         return smsAmount;
     }
 function returnSmsTotal(){
-  return smsTheTotal;
+  return smsTheTotal.toFixed(2);
 }
 
 
