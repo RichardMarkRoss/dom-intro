@@ -1,9 +1,8 @@
-describe('the setting-bill function', function(){
-    it('should calculate the amount of the of each strings value and display a total', function(){
-      var textBill = textBillCalculate()
-//         textBill.calculate('call')
-         textBill.calculate('call')
+describe('the setting-bill function', function() {
+    it('should calculate the amount of the of each strings value and display a total', function() {
+        var factory = settingBill();
+        factory.calculate(updateCall());
 
-        assert.equal(textBill.call(), 2.75);
+        assert.equal(factory.callTotal(), updateCall());
     });
 });

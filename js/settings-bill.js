@@ -11,89 +11,116 @@ var smsTotalsetting = document.querySelector(".smsTotalSettings");
 var totalSetting = document.querySelector(".totalSettings");
 var updateSettingBtn = document.querySelector(".updateSettings");
 
-var callTheTotal = 0;
-var smsTheTotal = 0;
-var callAmount = 0;
-var smsAmount = 0;
-var warnLevel = 0;
-var critLevel = 0;
-var totalValue = 0;
+var factory = settingBill();
 
 
-function addTotal(){
+function settingBillcheckBtn() {
 
-  		var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
-		if (checkedRadioBtn){
-    		var billItemSet = checkedRadioBtn.value;
-		}
-
-
-    if (billItemSet === "call"){
-        callTheTotal += callAmount;
-        if(callTheTotal > critLevel ){
-          var diff = callTheTotal - critLevel;
-          callTheTotal -= diff
-
-        }
-     }else if (billItemSet === "sms"){
-         smsTheTotal += smsAmount;
-         if (smsTheTotal > critLevel){
-           var diff = smsTheTotal - critLevel;
-          smsTheTotal -= diff;
-         }
+    var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
+    if (checkedRadioBtn) {
+        var billItemSet = checkedRadioBtn.value;
     }
+    return billItemSet;
+}
 
-    smsTotalsetting.innerHTML = smsTheTotal.toFixed(2);
-    callTotalSetting.innerHTML = callTheTotal.toFixed(2);
-     totalValue = callTheTotal + smsTheTotal;
-    totalSetting.innerHTML = totalValue.toFixed(2);
+//function settingBillAmount(){
 
-    if (totalValue >= critLevel){
-        totalSetting.classList.add("danger");
-
-    }
-
-
-
-    if (totalValue >= warnLevel){
-        totalSetting.classList.add("warning");
-    }
-
-	}
-
-  function addSetting(){
-
-  var updateAmountCall = callCostSetting.value;
-  var updateAmountSms = smsCostSetting.value;
-  var updateAmountcritLvl = criticalLevelSetting.value;
-  var updateAmountwarnLvl = warningLevelSetting.value;
-
-  if(callCostSetting != ""){
-      callAmount = parseFloat(updateAmountCall);
-    }
-
-    if(smsCostSetting != ""){
-        smsAmount = parseFloat(updateAmountSms);
-      }
-    // console.log(callAmount)
-    // console.log(smsAmount)
-      if(warningLevelSetting != ""){
-      warnLevel = parseFloat(updateAmountwarnLvl);
-      }
-      if(criticalLevelSetting != ""){
-      critLevel = parseFloat(updateAmountcritLvl);
-      }
-
-      if (critLevel > totalValue){
-          totalSetting.classList.remove("danger");
-
-      }
+// var callTheTotal = 0;
+// var smsTheTotal = 0;
+// var callAmount = 0;
+// var smsAmount = 0;
+// var warnLevel = 0;
+// var critLevel = 0;
+// var totalValue = 0;
 
 
-      // if (warnLevel > totalValue){
-      //     totalSetting.classList.remove("warning");
-      //
-      //       }
-  }
-  buttonAdd.addEventListener("click", addTotal);
-  updateSettingBtn.addEventListener("click", addSetting);
+
+//function addTotal(){
+
+// if (billItemSet === "call"){
+//     callTheTotal += callAmount;
+//     if(callTheTotal > critLevel ){
+//       var diff = callTheTotal - critLevel;
+//       callTheTotal -= diff
+//
+//     }
+//  }else if (billItemSet === "sms"){
+//      smsTheTotal += smsAmount;
+//      if (smsTheTotal > critLevel){
+//        var diff = smsTheTotal - critLevel;
+//       smsTheTotal -= diff;
+//      }
+
+//  }
+
+
+// function settingBillLogicAdd(){
+//     smsTotalsetting.innerHTML = settingTotal.toFixed(2);
+//     callTotalSetting.innerHTML = settingTotal.toFixed(2);
+//      totalValue = callTheTotal + smsTheTotal;
+//     totalSetting.innerHTML = settingTotal.toFixed(2);
+// }
+
+function settingBillLogicAdd() {
+    factory.calculate();
+    callTotalSetting.innerHTML = factory.callTotal();
+    //smsTotalSetting.innerHTML = settingTotal.toFixed(2);
+    //totalValue = callTheTotal + smsTheTotal;
+    //totalSetting.innerHTML = settingTotal.toFixed(2);
+}
+
+// function settingBillLevelStop(){
+//     if (totalValue >= critLevel){
+//         totalSetting.classList.add("danger");
+//           }
+//     if (totalValue >= warnLevel){
+//         totalSetting.classList.add("warning");
+//           }
+//
+//     return totalValue;
+//
+//   }
+
+//  }
+
+//  }
+
+//========================================================================
+function addSetting() {
+
+    var updateAmountCall = callCostSetting.value;
+    var updateAmountSms = smsCostSetting.value;
+    var updateAmountcritLvl = criticalLevelSetting.value;
+    var updateAmountwarnLvl = warningLevelSetting.value;
+
+    //factory.updateCall(updateAmountCall)
+    //console.log(updateAmountCall)
+    // if(callCostSetting != ""){
+    //     callAmount = parseFloat(updateAmountCall);
+    //   }
+    //
+    //   if(smsCostSetting != ""){
+    //       smsAmount = parseFloat(updateAmountSms);
+    //     }
+    //    console.log(callAmount)
+    //    console.log(smsAmount)
+    //     if(warningLevelSetting != ""){
+    //     warnLevel = parseFloat(updateAmountwarnLvl);
+    //     }
+    //     if(criticalLevelSetting != ""){
+    //     critLevel = parseFloat(updateAmountcritLvl);
+    //     }
+    //
+    //     if (critLevel > totalValue){
+    //         totalSetting.classList.remove("danger");
+    //
+    //     }
+
+}
+updateSettingBtn.addEventListener("click", function() {
+    addSetting();
+});
+buttonAdd.addEventListener("click", function() {
+    factory.calculate(settingBillcheckBtn());
+    settingBillLogicAdd();
+});
