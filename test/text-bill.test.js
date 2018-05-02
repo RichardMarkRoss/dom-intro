@@ -1,12 +1,12 @@
 describe('the text-bill function', function(){
-    it('should calculate the amount of the of each strings value and display a total', function(){
+    it('should calculate the text amount of call value and display the total to R2.75', function(){
       var textBill = textBillCalculate()
 
          textBill.calculate('call')
 
         assert.equal(textBill.call(), 2.75);
     });
-    it('should calculate the amount of the of each strings value and display a total', function(){
+    it('should calculate the amount text values call if clicked twice and display the total of R5.50', function(){
       var textBill = textBillCalculate()
 
          textBill.calculate('call')
@@ -14,7 +14,7 @@ describe('the text-bill function', function(){
 
         assert.equal(textBill.call(), 5.50);
       });
-      it('should calculate the amount of the of each strings value and display a total', function(){
+      it('if the the values are sms and call it should add the total to R3.50', function(){
         var textBill = textBillCalculate()
 
            textBill.calculate('call')

@@ -1,5 +1,5 @@
 describe('the Radio-bill function', function(){
-    it('should calculate the amount of the of each strings value and display a total', function(){
+    it('if selected the radio bill values(call,sms,call) it should give the total R6.25', function(){
       var radioBill = radioBillFactory();
           radioBill.calculate('call')
           radioBill.calculate('call')
@@ -11,7 +11,7 @@ describe('the Radio-bill function', function(){
           assert.equal(radioBill.sms(), 0.75);
 
       });
-      it('should calculate the amount of the of each strings value and display a total', function(){
+      it('if you click radio button on CALL three time it should calculate the total to R8.25', function(){
       var radioBill = radioBillFactory();
           radioBill.calculate('call')
           radioBill.calculate('call')
@@ -23,16 +23,16 @@ describe('the Radio-bill function', function(){
           assert.equal(radioBill.sms(), 0.00);
 
       });
-      it('should calculate the amount of the of each strings value and display a total', function(){
+      it('if you click radio button on SMS three time it should calculate the total to R2.25', function(){
         var radioBill = radioBillFactory();
-          radioBill.calculate('call')
           radioBill.calculate('sms')
-          radioBill.calculate('call')
+          radioBill.calculate('sms')
+          radioBill.calculate('sms')
 
 
-          assert.equal(radioBill.total(), 6.25);
-          assert.equal(radioBill.call(), 5.50);
-          assert.equal(radioBill.sms(), 0.75);
+          assert.equal(radioBill.total(), 2.25);
+          assert.equal(radioBill.call(), 0.00);
+          assert.equal(radioBill.sms(), 2.25);
 
     });
 });
