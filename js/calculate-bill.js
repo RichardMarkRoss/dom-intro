@@ -11,16 +11,17 @@ var billStringValue = document.querySelector(".billString");
 //  * once done looping over all the entries - display the total onto the screen in the billTotal element
 
 //link the function to a click event on the calculate button
-var billCalculate = CalculateBtnClick()
+//var billCalculate = CalculateBtnClick()
 
 function displayElement() {
 
 var billvalues = billStringValue.value;
-var billValue = billValues.trim();
   //var bill = CalculateBtnClicked();
-billCalculate.billTotal(billValue)
+
+//var billCalculate = 
+
   //var roundedBillTotal = billCalculate.total.toFixed(2);
-  billTotalElement.innerHTML = billCalculate.calculate.toFixed(2);
+billTotalElement.innerHTML = CalculateBtnClick(billvalues);
 
       //
       // if (billTotal >= 30){

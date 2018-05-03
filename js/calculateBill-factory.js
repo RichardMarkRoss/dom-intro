@@ -1,5 +1,5 @@
-  function CalculateBtnClick(billStringEle){
-    var billstring = billStringEle;
+  function CalculateBtnClick(billstring){
+  //  var billstring = billStringEle;
     var billItems = billstring.split(",");
     var billTotal = 0;
 
