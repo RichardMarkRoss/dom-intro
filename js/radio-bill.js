@@ -36,12 +36,12 @@ function radioBillLogic(){
     smsTotalTwo.innerHTML = radioTotal.sms().toFixed(2);
     totalTwo.innerHTML = radioTotal.total().toFixed(2);
 
-     // if (totalValue >= 50){
-     //     totalTwo.classList.add("danger");
-     // }
-     // else if (totalValue >= 30){
-     //     totalTwo.classList.add("warning");
-     // }
+      if (radioTotal.total() >= 50){
+         totalTwo.classList.add("danger");
+     }
+     else if (radioTotal.total() >= 30){
+         totalTwo.classList.add("warning");
+      }
 
 }
 
