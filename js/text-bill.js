@@ -23,13 +23,13 @@ textBill.calculate(billTypeCross)
     smsTotalOne.innerHTML = textBill.sms().toFixed(2);
     totalOne.innerHTML = textBill.total().toFixed(2);
     //
-    // if (totalValue >= 50){
-    //
-    //     totalOne.classList.add("danger");
-    // }
-    // else if (totalValue >= 30){
-    //     totalOne.classList.add("warning");
-    // }
+     if (textBill.total() >= 50){
+
+         totalOne.classList.add("danger");
+     }
+     else if (textBill.total() >= 30){
+         totalOne.classList.add("warning");
+     }
 }
 
 

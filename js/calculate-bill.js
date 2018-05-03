@@ -18,19 +18,19 @@ function displayElement() {
 var billvalues = billStringValue.value;
   //var bill = CalculateBtnClicked();
 
-//var billCalculate = 
+//var billCalculate =
 
   //var roundedBillTotal = billCalculate.total.toFixed(2);
 billTotalElement.innerHTML = CalculateBtnClick(billvalues);
 
-      //
-      // if (billTotal >= 30){
-      //
-      //     billTotalElement.classList.add("danger");
-      // }
-      // else if (billTotal >= 20){
-      //     billTotalElement.classList.add("warning");
-      // }
+
+       if (CalculateBtnClick(billvalues) >= 30){
+
+           billTotalElement.classList.add("danger");
+       }
+       else if (CalculateBtnClick(billvalues) >= 20){
+           billTotalElement.classList.add("warning");
+       }
 }
 
 
