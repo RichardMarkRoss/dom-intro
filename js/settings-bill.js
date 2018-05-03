@@ -62,8 +62,12 @@ function settingBillcheckBtn() {
 // }
 
 function settingBillLogicAdd() {
-    //factory.calculate();
+
+  //  factory.calculate(settingBillLogicAdd());
+
     callTotalSetting.innerHTML = factory.callTotal();
+    smsTotalsetting.innerHTML = factory.smsTotal();
+    totalSetting.innerHTML = factory.total();
     //smsTotalSetting.innerHTML = settingTotal.toFixed(2);
     //totalValue = callTheTotal + smsTheTotal;
     //totalSetting.innerHTML = settingTotal.toFixed(2);
@@ -93,8 +97,10 @@ function addSetting() {
     var updateAmountcritLvl = criticalLevelSetting.value;
     var updateAmountwarnLvl = warningLevelSetting.value;
 
-     console.log(updateAmountCall);
-       factory.updateCall(updateAmountCall)
+     //console.log(updateAmountCall);
+       factory.updateCall(updateAmountCall);
+       factory.updateSms(updateAmountSms);
+       //factory.updateCall(updateAmountCall)
     // console.log(updateAmountSms);
 
     //factory.updateCall(updateAmountCall)

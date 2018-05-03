@@ -45,8 +45,6 @@ function settingBill(){
 
 function updateCallValue(value){
   callAmount = parseFloat(value);
-  //console.log(callAmount);
-
   return callAmount;
     }
 
@@ -57,7 +55,6 @@ function returnCallTotal(){
 
 function updateSmsValue(value){
         smsAmount = parseFloat(value);
-  console.log(smsAmount);
         return smsAmount;
     }
 function returnSmsTotal(){
@@ -65,8 +62,8 @@ function returnSmsTotal(){
 }
 
 function totalReturn(){
-var theTotal = callAmount + smsAmount;
-  return theTotal
+var theTotal = callTheTotal + smsTheTotal;
+  return theTotal.toFixed(2)
 }
 
 
