@@ -1,6 +1,6 @@
 describe('the Radio-bill function', function(){
     it('if selected the radio bill values(call,sms,call) it should give the total R6.25', function(){
-      var radioBill = radioBillFactory();
+      var radioBill = RadioAndTextBillFactory();
           radioBill.calculate('call')
           radioBill.calculate('call')
           radioBill.calculate('sms')
@@ -12,7 +12,7 @@ describe('the Radio-bill function', function(){
 
       });
       it('if you click radio button on CALL three time it should calculate the total to R8.25', function(){
-      var radioBill = radioBillFactory();
+      var radioBill = RadioAndTextBillFactory();
           radioBill.calculate('call')
           radioBill.calculate('call')
           radioBill.calculate('call')
@@ -24,7 +24,7 @@ describe('the Radio-bill function', function(){
 
       });
       it('if you click radio button on SMS three time it should calculate the total to R2.25', function(){
-        var radioBill = radioBillFactory();
+        var radioBill = RadioAndTextBillFactory();
           radioBill.calculate('sms')
           radioBill.calculate('sms')
           radioBill.calculate('sms')

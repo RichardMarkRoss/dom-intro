@@ -9,42 +9,8 @@ var smsTotalOne = document.querySelector(".smsTotalOne");
 var totalOne = document.querySelector(".totalOne");
 
 
-function textBillCalculate(){
-  var callValue = 0;
-  var smsValue = 0;
-  //var totalValue = 0
 
-function textBillTotal(billTypeEntered){
-    if (billTypeEntered === "call"){
-        callValue += 2.75;
-    }
-    if (billTypeEntered === "sms"){
-        smsValue += 0.75;
-    }
-  //  return billTypeEntered;
-  }
-  function callValues(){
-      return callValue;
-    }
-
-  function smsValues(){
-      return smsValue;
-  }
-  function totalValues(){
-      var totalValue = callValue + smsValue;
-      return totalValue;
-  }
-  return{
-    calculate: textBillTotal,
-    call: callValues,
-    sms: smsValues,
-    total: totalValues,
-  }
-
-}
-
-
-var textBill = textBillCalculate()
+var textBill = RadioAndTextBillFactory()
 
 function textBillLogic(){
   // var billTypeCross = billTypeText.value;
