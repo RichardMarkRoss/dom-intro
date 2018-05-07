@@ -74,12 +74,13 @@ function settingBillLogicAdd() {
 }
 
 // function settingBillLevelStop(){
-//     if (totalValue >= critLevel){
-//         totalSetting.classList.add("danger");
-//           }
-//     if (totalValue >= warnLevel){
-//         totalSetting.classList.add("warning");
-//           }
+    // if (factory.total() >= critical(value)){
+    //     totalSetting.classList.add("danger");
+    //
+    //       }
+    // if (factory.total() >= warning(value)){
+    //     totalSetting.classList.add("warning");
+    //       }
 //
 //     return totalValue;
 //
@@ -100,6 +101,8 @@ function addSetting() {
      //console.log(updateAmountCall);
        factory.updateCall(updateAmountCall);
        factory.updateSms(updateAmountSms);
+       factory.warning(updateAmountwarnLvl);
+       factory.critical(updateAmountcritLvl);
        //factory.updateCall(updateAmountCall)
     // console.log(updateAmountSms);
 
@@ -122,6 +125,13 @@ function addSetting() {
         //     totalSetting.classList.remove("danger");
         //
         // }
+        // if (total() >= critical()){
+        //     totalSetting.classList.add("danger");
+        //
+        //       }
+        // if (total() >= warning()){
+        //     totalSetting.classList.add("warning");
+        //       }
 
 }
 updateSettingBtn.addEventListener("click", function() {
