@@ -15,7 +15,7 @@ var insertMyDataAt = document.querySelector('.insertMyData');
 
 
 
-var textBill = RadioAndTextBillFactory()
+var textBill = RadioAndTextBillFactory();
 
 // function textBillLogic(){
 
@@ -41,16 +41,16 @@ var textBill = RadioAndTextBillFactory()
 
 addToBillBtn.addEventListener('click',function(){
     var billTypeCross = billTypeText.value;
-    textBill.calculate(billTypeCross)
+    textBill.calculate(billTypeCross);
 
    var data = {
        callTotal: textBill.call().toFixed(2),
        smsTotal: textBill.sms().toFixed(2),
        theTotal: textBill.totals().toFixed(2),
     //    levels: textBill.checkLevels()
-   }
+   };
 
-   insertMyDataAt.innerHTML = compileTemplate(data)
+   insertMyDataAt.innerHTML = compileTemplate(data);
    
  });
 
@@ -60,7 +60,7 @@ addToBillBtn.addEventListener('click',function(){
         callTotal: textBill.call().toFixed(2),
         smsTotal: textBill.sms().toFixed(2),
         theTotal: textBill.totals().toFixed(2)
-    }
+    };
  
     insertMyDataAt.innerHTML = compileTemplate(data);
 
