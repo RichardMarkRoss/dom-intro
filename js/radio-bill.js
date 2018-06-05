@@ -9,10 +9,10 @@ var smsTotalTwo = document.querySelector(".smsTotalTwo");
 
 var totalTwo = document.querySelector(".totalTwo");
 
-var templateSource = document.querySelector('.myFirstTemplate').innerHTML;
+var templateSource = document.querySelector('.mySecondTemplate').innerHTML;
 
 var compileTemplate = Handlebars.compile(templateSource);
-var insertMyDataAt = document.querySelector('.insertMyData');
+var insertMyDataAt = document.querySelector('.insertMyDataTwo');
 
 var radioTotal = RadioAndTextBillFactory();
 
@@ -50,8 +50,9 @@ function radioValue(){
 
 
 radioBillAddBtn.addEventListener('click', function(){
-radioValue();
-var billTypeCross = radioBillAddBtn.value;
+
+var billTypeCross = radioValue();
+console.log(billTypeCross)
 radioTotal.calculate(billTypeCross)
 
 var data = {

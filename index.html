@@ -24,6 +24,23 @@
         </table>
      
     </script>
+    <script type="text/x-template" class="mySecondTemplate">
+      <table>
+        <tr>
+          <td>Call total</td>
+          <td>R<span class="callTotalTwo">{{callTotal}}/span></td>
+        </tr>
+        <tr>
+          <td>SMS total</td>
+          <td>R<span class="smsTotalTwo">{{smsTotal}}</span></td>
+        </tr>
+        <tr >
+          <td>Total</td>
+          <td class="orange" >R<span class="totalTwo">{{theTotal}}</span></td>
+        </tr>
+      </table>
+     
+    </script>
 
   </head>
   <body>
@@ -159,7 +176,9 @@
             </div>
             <div class="six columns">
                   <h5>Totals</h5>
-                  <table>
+                  <div class="insertMyDataTwo">
+
+           <!-- <table>
                     <tr>
                       <td>Call total</td>
                       <td>R<span class="callTotalTwo">0.00</span></td>
@@ -172,7 +191,8 @@
                       <td>Total</td>
                       <td class="orange" >R<span class="totalTwo">0.00</span></td>
                     </tr>
-                  </table>
+                  </table> -->
+                  </div>
             </div>
           </div>
         </div>
