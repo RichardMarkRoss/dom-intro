@@ -7,41 +7,14 @@ function settingBill(){
   var smsAmount = 0;
   var warnLevel = 0;
   var critLevel = 0;
-  //var totalValue = 0;
-
-  // if(callCostSetting != ""){
-  //     callAmount = parseFloat(updateAmountCall);
-  //   }
-  // if(smsCostSetting != ""){
-  //     smsAmount = parseFloat(updateAmountSms);
-  //   }
-  // if(warningLevelSetting != ""){
-  //     warnLevel = parseFloat(updateAmountwarnLvl);
-  //   }
-  // if(criticalLevelSetting != ""){
-  //     critLevel = parseFloat(updateAmountcritLvl);
-  //   }
-
 
   function calculateBill(billItemSet){
 
     if (billItemSet === "call"){
         callTheTotal += callAmount;
-//          if(callTheTotal > critLevel ){
-//            var diff = callTheTotal - critLevel;
-//            callTheTotal -= diff;
-//         }
-// return callTheTotal;
      }else if (billItemSet === "sms"){
          smsTheTotal += smsAmount;
-          // if (smsTheTotal > critLevel){
-          //   var diff = smsTheTotal - critLevel;
-          //  smsTheTotal -= diff;
-          //   total.classList.add("danger");
-          // }
-          // return smsTheTotal;
   }
-
 }
 function updateAmountwarnLvl(value){
   warnLevel = parseFloat(value);
@@ -74,7 +47,6 @@ function totalReturn(){
 var theTotal = callTheTotal + smsTheTotal;
 if (theTotal >= warnLevel){
     totalSetting.classList.add("warning");
-
   }
 if (theTotal >= critLevel){
     totalSetting.classList.add("danger");
@@ -82,8 +54,6 @@ if (theTotal >= critLevel){
   };
   return theTotal.toFixed(2);
 }
-
-
 return{
   calculate: calculateBill,
   callTotal: returnCallTotal,

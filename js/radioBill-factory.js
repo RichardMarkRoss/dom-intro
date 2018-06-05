@@ -2,6 +2,7 @@ function RadioAndTextBillFactory(){
 
 	var callsValueTwo = 0;
 	var smsValueTwo = 0;
+	var totalValue = 0;
 
 	function radioBillCalculate(billItemType){
 
@@ -21,16 +22,28 @@ function RadioAndTextBillFactory(){
 			return smsValueTwo;
 		}
 
-		function totalValue(){
-			var totalValue = callsValueTwo + smsValueTwo;
-			return totalValue
+		function totalValues(){
+			 totalValue = callsValueTwo + smsValueTwo;
+			return totalValue;
 		}
+
+		// function theLevels(){
+		// 	if (totalValue >= 50){
+
+		// 	return "danger";
+		// }
+		// else if (totalValue >= 10){
+		// 	return "warning";
+		// }
+		// }
 
 		return {
 			calculate: radioBillCalculate,
 			call: callValue,
 			sms: smsValue,
-			total: totalValue
+			totals: totalValues,
+			//checkLevels:theLevels
+
 		}
 
 }

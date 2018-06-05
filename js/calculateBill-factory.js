@@ -1,5 +1,5 @@
   function CalculateBtnClick(billstring){
-  //  var billstring = billStringEle;
+
     var billItems = billstring.split(",");
     var billTotal = 0;
 
@@ -17,17 +17,3 @@
 var roundedBillTotal = billTotal.toFixed(2);
 return roundedBillTotal;
   }
-
-
-
-// function billTotal(){
-//   return billTotal
-// }
-// function billItem(){
-//   var billItem = billItems[i];
-//   return billItems
-// }
-//   return{
-//     total: billTotal,
-//     calculate: billItem
-//   }
