@@ -17,6 +17,7 @@ var insertMyDataAt = document.querySelector('.insertMyData');
 
 var textBill = RadioAndTextBillFactory();
 
+
 // function textBillLogic(){
 
 
@@ -39,29 +40,33 @@ var textBill = RadioAndTextBillFactory();
 
 
 
-addToBillBtn.addEventListener('click',function(){
+addToBillBtn.addEventListener('click', function () {
     var billTypeCross = billTypeText.value;
     textBill.calculate(billTypeCross);
 
-   var data = {
-       callTotal: textBill.call().toFixed(2),
-       smsTotal: textBill.sms().toFixed(2),
-       theTotal: textBill.totals().toFixed(2),
-    //    levels: textBill.checkLevels()
-   };
+    var data = {
+        callTotal: textBill.call().toFixed(2),
+        smsTotal: textBill.sms().toFixed(2),
+        theTotal: textBill.totals().toFixed(2),
+        // levels: textBill.checkLevels()
 
-   insertMyDataAt.innerHTML = compileTemplate(data);
-   
- });
+    };
+    totalOne = textBill.checkLevels(textBill.totals());
 
- window.addEventListener('load', function(){
+    insertMyDataAt.innerHTML = compileTemplate(data);
+
+});
+
+window.addEventListener('load', function () {
 
     var data = {
         callTotal: textBill.call().toFixed(2),
         smsTotal: textBill.sms().toFixed(2),
         theTotal: textBill.totals().toFixed(2)
+
     };
- 
+
+
     insertMyDataAt.innerHTML = compileTemplate(data);
 
- });
+});

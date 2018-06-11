@@ -11,19 +11,17 @@ var totalTwo = document.querySelector(".totalTwo");
 
 var templateSource = document.querySelector('.mySecondTemplate').innerHTML;
 
-var compileTemplate = Handlebars.compile(templateSource);
-var insertMyDataAt = document.querySelector('.insertMyDataTwo');
+var compileTemplate2 = Handlebars.compile(templateSource);
+var insertMyDataIn = document.querySelector('.insertMyDataTwo');
 
 var radioTotal = RadioAndTextBillFactory();
 
 function radioValue(){
 
-	var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
-	if (checkedRadioBtn){
-			var billItemType = checkedRadioBtn.value;
-			//console.log(billItemType)
-	}
-	return billItemType;
+	// var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
+	// if (checkedRadioBtn){
+	// 		var billItemType = checkedRadioBtn.value;
+	// }
 }
 
 //var radioBillFactoryFunction = radioBillFactory()
@@ -49,19 +47,25 @@ function radioValue(){
 
 
 radioBillAddBtn.addEventListener('click', function(){
+	var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
+	if (checkedRadioBtn){
+            var billItemType = checkedRadioBtn.value;
+            radioTotal.calculate(billItemType);
+console.log(billItemType);
 
-var billTypeCrossed = radioValue();
-console.log(billTypeCross);
-radioTotal.calculate(billTypeCrossed);
+	}
+//var billTypeCrossed = radioValue();
+//console.log(billTypeCross);
+
 
 var dataValue = {
    callTotal2: radioTotal.call().toFixed(2),
    smsTotal2: radioTotal.sms().toFixed(2),
    theTotal2: radioTotal.totals().toFixed(2),
-//    levels: radioTotal.checkLevels()
 };
 
-insertMyDataAt.innerHTML = compileTemplate(dataValue);
+insertMyDataIn.innerHTML = compileTemplate2(dataValue);
+
 
 });
 
@@ -73,6 +77,6 @@ window.addEventListener('load', function(){
         theTotal2: radioTotal.totals().toFixed(2)
     };
  
-    insertMyDataAt.innerHTML = compileTemplate(dataValue);
+    insertMyDataIn.innerHTML = compileTemplate2(dataValue);
 
  });

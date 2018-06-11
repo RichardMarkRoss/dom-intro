@@ -27,7 +27,7 @@ function settingBillLogicAdd() {
     callTotalSetting.innerHTML = factory.callTotal();
     smsTotalsetting.innerHTML = factory.smsTotal();
     totalSetting.innerHTML = factory.total();
-
+}
 //========================================================================
 function addSetting() {
 
