@@ -20,14 +20,8 @@ var textBill = RadioAndTextBillFactory();
 
 // function textBillLogic(){
 
-
-
 // var billTypeCross = billTypeText.value;
 // textBill.calculate(billTypeCross)
-
-//     callsTotalOne.innerHTML = textBill.call().toFixed(2);
-//     smsTotalOne.innerHTML = textBill.sms().toFixed(2);
-//     totalOne.innerHTML = textBill.total().toFixed(2);
 
 //      if (textBill.total() >= 50){
 
@@ -43,15 +37,15 @@ var textBill = RadioAndTextBillFactory();
 addToBillBtn.addEventListener('click', function () {
     var billTypeCross = billTypeText.value;
     textBill.calculate(billTypeCross);
+ 
+    
 
     var data = {
         callTotal: textBill.call().toFixed(2),
         smsTotal: textBill.sms().toFixed(2),
         theTotal: textBill.totals().toFixed(2),
-        // levels: textBill.checkLevels()
 
     };
-    totalOne = textBill.checkLevels(textBill.totals());
 
     insertMyDataAt.innerHTML = compileTemplate(data);
 

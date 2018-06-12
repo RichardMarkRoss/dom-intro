@@ -27,21 +27,11 @@ function RadioAndTextBillFactory() {
 		return totalValue;
 	}
 
-	function theLevels() {
-		if (totalValue >= 50) {
-
-			return "danger";
-		} else if (totalValue >= 10) {
-			return "warning";
-		}
-	}
-
 	return {
 		calculate: radioBillCalculate,
 		call: callValue,
 		sms: smsValue,
 		totals: totalValues,
-		checkLevels: theLevels
 	};
 
 }
