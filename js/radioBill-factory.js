@@ -26,12 +26,20 @@ function RadioAndTextBillFactory() {
 		totalValue = callsValueTwo + smsValueTwo;
 		return totalValue;
 	}
+	function settingColorForTotal(){
+		if (totalValue >= 50){
+			return "danger";
+		}else if(totalValue >= 30){
+			return "warning";
+		}
+	}
 
 	return {
 		calculate: radioBillCalculate,
 		call: callValue,
 		sms: smsValue,
 		totals: totalValues,
+		colorTotal: settingColorForTotal,
 	};
 
 }

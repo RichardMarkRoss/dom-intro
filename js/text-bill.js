@@ -13,38 +13,25 @@ var templateSource = document.querySelector('.myFirstTemplate').innerHTML;
 var compileTemplate = Handlebars.compile(templateSource);
 var insertMyDataAt = document.querySelector('.insertMyData');
 
-
-
 var textBill = RadioAndTextBillFactory();
-
-
-// function textBillLogic(){
-
-// var billTypeCross = billTypeText.value;
-// textBill.calculate(billTypeCross)
-
-//      if (textBill.total() >= 50){
-
-//          totalOne.classList.add("danger");
-//      }
-//      else if (textBill.total() >= 30){
-//          totalOne.classList.add("warning");
-//      }
-// }
-
-
 
 addToBillBtn.addEventListener('click', function () {
     var billTypeCross = billTypeText.value;
     textBill.calculate(billTypeCross);
- 
-    
+
+    // var className = "";
+    // if (textBill.total() >= 50) {
+    //     className = "danger";
+    // } else if (textBill.total() >= 30) {
+    //     //document.getElementById("totalOne").classList.add("warning");
+    // }
+
 
     var data = {
         callTotal: textBill.call().toFixed(2),
         smsTotal: textBill.sms().toFixed(2),
         theTotal: textBill.totals().toFixed(2),
-
+        levelTotal: textBill.colorTotal(),
     };
 
     insertMyDataAt.innerHTML = compileTemplate(data);
